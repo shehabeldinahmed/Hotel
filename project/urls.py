@@ -22,11 +22,13 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('about/', include('about.urls'))
-    # path('property/', include('property.urls'))
-    # path('blog/', include('blog.urls'))
-    # path('setting/', include('setting.urls'))
-    # path('accounts/', include('accounts.urls'))
-]
+    path('about/', include('about.urls' ,namespace='about')),
+    path('property/', include('property.urls' ,namespace='property')),
+    # path('blog/', include('blog.urls')),
+    # path('setting/', include('setting.urls')),
+    # path('accounts/', include('accounts.urls')),
+] 
+
+
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

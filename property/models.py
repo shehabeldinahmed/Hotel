@@ -1,7 +1,11 @@
+
+from typing import Reversible
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 from django.utils.text import  slugify
+from django.urls import reverse
+
 # Create your models here.
 class Property (models.Model):
     name          =  models.CharField( max_length =  50)
@@ -23,6 +27,13 @@ class Property (models.Model):
     
     def __str__(self):
         return self.name
+
+
+    def get_absolute_url(self):
+        return reverse ("property:property_detail", kwargs={"slug":self.slug})
+
+        
+        
 
 
 class PropertyImage (models.Model):        
