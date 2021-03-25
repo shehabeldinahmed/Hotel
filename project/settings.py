@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'about',
     'property',
     'setting',
+    'django_summernote',
+    "bootstrap4",
+    'django_filters',
     'taggit'
 ]
 
@@ -134,3 +137,6 @@ MEDIA_URL = '/images/'
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
