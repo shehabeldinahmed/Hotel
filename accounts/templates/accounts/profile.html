@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+{% block body %}
+<div class="hero-wrap js-fullheight" style="background-image: url({% static 'images/bg_4.jpg'%});">
+  <div class="overlay"></div>
+  <div class="container">
+      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center"
+          data-scrollax-parent="true">
+          <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+              <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span
+                      class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a
+                          href="blog.html">Blog</a></span> <span>Blog Single</span></p>
+              <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Tips &amp;
+                  Articles</h1>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="job_details_area  mb-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="job_sumary">
+                    <div class="summery_header">
+                        <h3>Profile Summery of {{profile}}</h3>
+                    </div>
+                    <div class="job_content">
+                        <ul>
+                            <li> user_Name: <span>{{profile.user.username}}</span></li>
+                            <li>firs_Name: <span>{{profile.user.first_name}}</span></li>
+                            <li>last_Name: <span>{{profile.user.last_name}}</span></li>
+                            <li>Email: <span>{{profile.user.email}}</span></li>
+                            <li>Phone: <span>{{profile.phone_number}}</span></li>
+                            <li>Address: <span>{{profile.city}}</span></li>
+
+                        </ul>
+                    </div>
+                    <div class="p-50">
+                        <a class="btn btn-primary" href="{% url 'accounts:profile_edit' %}"> Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+{% endblock body %}
+
+
+    <div class="job_details_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="job_sumary">
+                        <div class="summery_header">
+                            <h3>Profile Summery</h3>
+                        </div>
+                        <div class="job_content">
+                            <ul>
+                                <li>Name: <span>{{profile}}</span></li>
+                                <li>Email: <span>{{profile.user.email}}</span></li>
+                                <li>Phone: <span>{{profile.phone_number}}</span></li>
+                                <li>Address: <span>{{profile.city}}</span></li>
+
+                            </ul>
+                        </div>
+                        <div class="p-5">
+                            <a class="boxed-btn3 w-100" href="{% url 'accounts:profile_edit' %}"> Edit Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    

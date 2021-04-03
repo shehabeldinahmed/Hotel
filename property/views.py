@@ -12,7 +12,7 @@ from.filters import PropertyFilter
 class PropertyList(FilterView):
     model =Property
   
-    paginate_by =2
+    paginate_by =4
     filterset_class = PropertyFilter
     template_name='property/property_list.html'
 

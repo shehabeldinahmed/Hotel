@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #my apps
-    'accounts',
+    
     'blog',
     'about',
     'property',
@@ -47,7 +48,8 @@ INSTALLED_APPS = [
     'django_summernote',
     "bootstrap4",
     'django_filters',
-    'taggit'
+    'taggit',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +143,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'sh4maz92f@gmail.com'
+EMAIL_HOST_PASSWORD = 'fatshe9291'
