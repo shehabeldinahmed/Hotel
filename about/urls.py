@@ -1,10 +1,10 @@
 
-from about.views import aboutview
+from about.views import AboutView
 from django.urls import path
 
 
 app_name ='about'
 
 urlpatterns = [
-    path('', aboutview ,name='about'),
+    path('',AboutView.as_view() ,name='about'),
 ]
